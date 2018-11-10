@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My TO DO List</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__logo"></div>
+    <div class="header__date">
+      <div class="header__date-number"></div>
+      <div class="header__date-remain"></div>
+    </div>
+  </header>
+  <main class="main">
+    <ul class="undone__list">
+      <li class="undone__list-item">
+        <input class="item__checkbox-in" type="checkbox">
+          <label class="item__checkbox-label">Hacer colada
+            <span class="check"></span>
+        </label>
+      </li>
+      <li class="undone__list-item">
+        <input class="item__checkbox-in" type="checkbox">
+          <label class="item__checkbox-label">Terminar proyecto
+            <span class="check"></span>
+        </label>
+      </li>
+    </ul>
+    <ul class="done__list">
+      <li class="done__list-item">
+        <input class="item__checkbox-in" type="checkbox">
+          <label class="item__checkbox-label">Tarea 0
+            <span class="check"></span>
+          </label>
+      </li>
+      <li class="done__list-item">
+        <input class="item__checkbox-in" type="checkbox">
+          <label class="item__checkbox-label">Tarea 1
+            <span class="check"></span>
+          </label>
+      </li>
+    </ul>
+  </main>
+  <footer class="page__footer">
+    <div class="footer__button"><p class="footer__button-icon">+</p></i></div>
+  </footer>
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
