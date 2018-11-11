@@ -12,7 +12,8 @@ var weekDay = weekDays[currentDate.getDay()]
 var monthDay = currentDate.getDate()
 var remainDate = (months[currentDate.getMonth()] + ", " + currentDate.getFullYear());
 
-// to create elements and its classes
+// Date
+// To create elements and its classes
 var number = document.createElement('p');
 headerDateNumber.appendChild(number);
 number.classList.add ('header__date-today');
@@ -31,41 +32,40 @@ number.innerHTML = monthDay;
 monthAndYear.innerHTML = remainDate;
 
 
-// logica para pasar un item a la lista de hehcos
+// Item done
+var doneItem = document.querySelector('.undone__list-item');
+var checkbox = document.querySelector('.item__checkbox-in');
+checkbox.addEventListener("change", checkMode);
 
-// var field = document.querySelector ('.item__checkbox-in');
-// var  undone= document.querySelector ('.undone__list-item');
+function checkMode(){
+  var checked = checkbox.checked;
+  if(checked){
+    doneItem.classList.remove ('undone__list-item');
+    doneItem.classList.add ('done__list-item');
+}
+  else {
+    doneItem.classList.add('undone__list-item');
+    doneItem.classList.remove ('done__list-item');
+}
+}
 
+// Modal
 
-// function taskDone (){
-// if(field.checked == true){
-//   undone.classList.remove('undone__list-item');
-//   undone.classList.add ('done__list-item');
-// }
-// }
-
-// field.addEventListener ('click', taskDone);
-
-// modal
 // Get the modal
 var modal = document.querySelector('.modal');
-
-var undoneList = document.querySelector('.undone__list');
 // Get the button that opens the modal
 var btn = document.querySelector('.footer__button');
-
 // Get the button element that closes the modal
 var add = document.querySelector('.modal__content-button');
 
+var undoneList = document.querySelector('.undone__list');
 var myTask = document.querySelector('.modal__content-in');
-
 
 
 function showModal() {
 modal.classList.remove ('modal');
 modal.classList.add ('modal__opened');
 }
-
 
 function addTask() {
 // To create li
@@ -99,10 +99,3 @@ modal.classList.add ('modal');
 
 add.addEventListener ('click', addTask);
 btn.addEventListener ('click', showModal);
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }

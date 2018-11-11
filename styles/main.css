@@ -62,20 +62,23 @@ body {
   font: 'Rubik', sans-serif 16px;
   font-size: 16px;
   padding: 0;
-  
 }
-.done__list{
-  list-style: none;
-  margin: 0;
+
+.done__list-item {
+  text-decoration: line-through;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
-  padding: 0;
-}
+} 
 
 .undone__list-item {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
 }
 
 .item__checkbox-in {
@@ -86,10 +89,7 @@ body {
   font-size: 18px;
 }
 
-.done__list-item {
-  /* visibility: hidden; */
-  text-decoration: line-through;
-} 
+
 
 /* para el modal */
 .modal {
