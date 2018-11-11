@@ -44,4 +44,62 @@ monthAndYear.innerHTML = remainDate;
 // }
 // }
 
-field.addEventListener ('click', taskDone);
+// field.addEventListener ('click', taskDone);
+
+// modal
+// Get the modal
+var modal = document.querySelector('.modal');
+
+
+var undoneList = document.querySelector('.undone__list')
+// Get the button that opens the modal
+var btn = document.querySelector('.footer__button');
+
+// Get the button element that closes the modal
+var add = document.querySelector('.modal__content-button');
+
+var myTask = document.querySelector ('.modal__content-in').value;
+
+function showModal() {
+modal.classList.remove ('modal');
+modal.classList.add ('modal__opened');
+}
+function addTask() {
+// To create li
+var undoneItem = document.createElement('li');
+undoneItem.classList.add ('undone__list-item')
+undoneList.appendChild(undoneItem);
+// To create input
+var itemCheckbox = document.createElement('input');
+itemCheckbox.classList.add ('item__checkbox-in')
+undoneItem.appendChild(itemCheckbox);
+// To create label
+var itemLabel = document.createElement('label');
+itemLabel.classList.add ('item__checkbox-label')
+undoneItem.appendChild(itemLabel);
+// To create span 
+var itemSpan = document.createElement('span');
+itemSpan.classList.add ('check')
+itemLabel.appendChild(itemSpan);
+// To write input on item label
+itemLabel.createTextNode(myTask);
+}
+
+add.addEventListener ('click', addTask);
+btn.addEventListener ('click', showModal);
+// // When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//     modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// add.onclick = function() {
+//     modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
